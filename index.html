@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Anxiety Worksheet | Quiet Compass</title>
+  <meta name="description" content="Free printable anxiety worksheet with CBT & DBT grounding techniques. Fillable on your phone or computer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #F7F4F0;
+      color: #2D3748;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      width: 100%;
+      max-width: 1100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 40px 60px;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .hero-left {
+      flex: 1;
+      min-width: 320px;
+      max-width: 500px;
+    }
+
+    .hero-right {
+      flex: 0 0 auto;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #4A7C6F;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 18px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: 44px;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      color: #2D3748;
+    }
+
+    h1 span {
+      color: #4A7C6F;
+    }
+
+    .subtitle {
+      font-size: 17px;
+      color: #4A6A60;
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    .features {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+
+    .features li {
+      font-size: 15px;
+      line-height: 2;
+      color: #2D3748;
+    }
+
+    .features li::before {
+      content: "\2713";
+      color: #4A7C6F;
+      font-weight: 700;
+      margin-right: 10px;
+    }
+
+    /* ─── FORM ─── */
+    .form-container {
+      width: 100%;
+      max-width: 460px;
+    }
+
+    .form-box {
+      background: white;
+      border-radius: 16px;
+      padding: 36px 32px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    }
+
+    .form-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #2D3748;
+      margin-bottom: 6px;
+    }
+
+    .form-sub {
+      font-size: 13px;
+      color: #718096;
+      margin-bottom: 20px;
+    }
+
+    .form-box input[type="email"] {
+      width: 100%;
+      padding: 14px 16px;
+      border: 2px solid #E2DDD7;
+      border-radius: 10px;
+      font-size: 15px;
+      font-family: 'Inter', sans-serif;
+      color: #2D3748;
+      margin-bottom: 12px;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+
+    .form-box input[type="email"]:focus {
+      border-color: #4A7C6F;
+    }
+
+    .form-box input[type="email"]::placeholder {
+      color: #A0AEC0;
+    }
+
+    .form-box button {
+      width: 100%;
+      padding: 14px;
+      background: #4A7C6F;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      letter-spacing: 0.3px;
+    }
+
+    .form-box button:hover {
+      background: #3D6B5F;
+      transform: translateY(-1px);
+    }
+
+    .form-box button:active {
+      transform: translateY(0);
+    }
+
+    .form-note {
+      font-size: 11px;
+      color: #A0AEC0;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .success-message {
+      display: none;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .success-message h3 {
+      color: #4A7C6F;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .success-message p {
+      color: #4A6A60;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .success-message a {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 12px 28px;
+      background: #4A7C6F;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    /* ─── MOCKUP ─── */
+    .mockup {
+      width: 280px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 16px 50px rgba(0,0,0,0.08);
+      padding: 24px;
+      transform: rotate(2deg);
+    }
+
+    .mockup-title { font-size: 18px; font-weight: 700; color: #4A7C6F; margin-bottom: 4px; }
+    .mockup-brand { font-size: 10px; color: #A0AEC0; margin-bottom: 14px; letter-spacing: 0.5px; }
+    .mockup-label { font-size: 8px; color: #4A7C6F; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; margin-top: 10px; }
+    .mockup-line { height: 7px; background: #E8DDD3; border-radius: 4px; margin-bottom: 5px; }
+    .mockup-line.short { width: 55%; }
+    .mockup-line.med { width: 75%; }
+    .mockup-line.long { width: 90%; }
+    .mockup-box { height: 28px; border: 1.5px solid #D8D0C8; border-radius: 5px; margin-bottom: 6px; background: #FAFAF8; }
+    .mockup-circles { display: flex; gap: 6px; margin: 8px 0; }
+    .mockup-circle { width: 20px; height: 20px; border-radius: 50%; border: 2px solid #4A7C6F; display: flex; align-items: center; justify-content: center; font-size: 8px; color: #4A7C6F; font-weight: 700; }
+    .mockup-circle.filled { background: #4A7C6F; color: white; }
+    .mockup-card { background: #F7F4F0; border-radius: 5px; padding: 8px 10px; margin-bottom: 5px; border-left: 3px solid #4A7C6F; }
+    .mockup-card-t { font-size: 9px; font-weight: 700; color: #2D3748; }
+    .mockup-card-d { font-size: 7px; color: #718096; margin-top: 2px; }
+    .mockup-check { display: flex; gap: 6px; align-items: center; margin-bottom: 4px; }
+    .mockup-cb { width: 12px; height: 12px; border: 1.5px solid #4A7C6F; border-radius: 2px; }
+    .mockup-cb.on { background: #4A7C6F; }
+    .mockup-cl { font-size: 8px; color: #2D3748; }
+
+    /* ─── TOOLKIT SECTION ─── */
+    .toolkit {
+      width: 100%;
+      max-width: 1100px;
+      padding: 50px 40px;
+      text-align: center;
+    }
+
+    .toolkit-divider {
+      width: 60px;
+      height: 3px;
+      background: #4A7C6F;
+      margin: 0 auto 30px;
+      border-radius: 2px;
+    }
+
+    .toolkit h2 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #2D3748;
+      margin-bottom: 10px;
+    }
+
+    .toolkit h2 span { color: #4A7C6F; }
+
+    .toolkit p {
+      font-size: 15px;
+      color: #718096;
+      max-width: 500px;
+      margin: 0 auto 24px;
+      line-height: 1.6;
+    }
+
+    .toolkit-btn {
+      display: inline-block;
+      padding: 14px 32px;
+      background: #2D3748;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .toolkit-btn:hover {
+      background: #1A202C;
+      transform: translateY(-1px);
+    }
+
+    /* ─── SOCIAL ─── */
+    .social {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      padding: 10px 0 20px;
+    }
+
+    .social a {
+      font-size: 13px;
+      color: #4A7C6F;
+      text-decoration: none;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+
+    .social a:hover { opacity: 0.7; }
+
+    /* ─── FOOTER ─── */
+    .footer {
+      width: 100%;
+      text-align: center;
+      padding: 20px 40px 30px;
+      font-size: 11px;
+      color: #A0AEC0;
+    }
+
+    .footer a { color: #4A7C6F; text-decoration: none; }
+
+    /* ─── MOBILE ─── */
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        padding: 50px 24px 40px;
+        gap: 40px;
+      }
+
+      .hero-left { max-width: 100%; }
+
+      h1 { font-size: 34px; }
+
+      .mockup { width: 240px; transform: rotate(1deg); }
+
+      .form-container { max-width: 100%; }
+
+      .toolkit { padding: 40px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="badge">Free Download</div>
+      <h1>Your Free <span>Anxiety<br>Quick Check</span></h1>
+      <p class="subtitle">A one-page CBT & DBT worksheet with grounding techniques, a 1-10 anxiety scale, and self-reflection prompts. Fillable on your phone or computer.</p>
+      <ul class="features">
+        <li>5 reflection questions to check in with yourself</li>
+        <li>1-10 anxiety scale with body-scan checklist</li>
+        <li>3 grounding techniques (5-4-3-2-1, Box Breathing, One-Thing Rule)</li>
+        <li>Fillable on phone + computer — no printing needed</li>
+        <li>Based on CBT & DBT frameworks used by therapists</li>
+      </ul>
+
+      <!-- FORM -->
+      <div class="form-container">
+        <div class="form-box" id="formBox">
+          <div class="form-title">Get the free worksheet</div>
+          <div class="form-sub">Enter your email and it's yours instantly.</div>
+          <form id="emailForm" action="https://app.convertkit.com/forms/YOUR_FORM_ID/subscriptions" method="post">
+            <input type="email" name="email_address" placeholder="Enter your email" required>
+            <button type="submit">Send Me the Worksheet</button>
+          </form>
+          <div class="form-note">No spam. Unsubscribe anytime.</div>
+        </div>
+        <div class="success-message" id="successMessage">
+          <h3>Check your email!</h3>
+          <p>Your free worksheet is on its way. If you don't see it in a minute, check your spam folder.</p>
+          <a href="https://quietcompass.gumroad.com/l/vfcyofi">Download Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="mockup">
+        <div class="mockup-title">My Anxiety Quick Check</div>
+        <div class="mockup-brand">Quiet Compass</div>
+        <div class="mockup-label">Self-Check</div>
+        <div class="mockup-line long"></div>
+        <div class="mockup-line med"></div>
+        <div class="mockup-box"></div>
+        <div class="mockup-check"><div class="mockup-cb on"></div><span class="mockup-cl">Racing thoughts</span></div>
+        <div class="mockup-check"><div class="mockup-cb"></div><span class="mockup-cl">Tight chest</span></div>
+        <div class="mockup-check"><div class="mockup-cb on"></div><span class="mockup-cl">Restlessness</span></div>
+        <div class="mockup-label">Anxiety Level</div>
+        <div class="mockup-circles">
+          <div class="mockup-circle">1</div><div class="mockup-circle">2</div><div class="mockup-circle">3</div>
+          <div class="mockup-circle filled">4</div><div class="mockup-circle">5</div><div class="mockup-circle">6</div><div class="mockup-circle">7</div>
+        </div>
+        <div class="mockup-label">Try a Technique</div>
+        <div class="mockup-card"><div class="mockup-card-t">5-4-3-2-1 Grounding</div><div class="mockup-card-d">Name 5 things you see, 4 you hear...</div></div>
+        <div class="mockup-card"><div class="mockup-card-t">Box Breathing</div><div class="mockup-card-d">Inhale 4s, hold 4s, exhale 4s, hold 4s</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOLKIT PROMO -->
+  <section class="toolkit">
+    <div class="toolkit-divider"></div>
+    <h2>Want the full <span>toolkit</span>?</h2>
+    <p>The complete Anxiety Management Toolkit includes 22 structured worksheets + 20 printable coping cards — based on CBT and DBT techniques used by therapists worldwide.</p>
+    <a href="https://quietcompass.gumroad.com" class="toolkit-btn">Get the Full Toolkit</a>
+  </section>
+
+  <!-- SOCIAL -->
+  <div class="social">
+    <a href="https://www.tiktok.com/@quietcompass_">TikTok</a>
+    <a href="https://www.instagram.com/quietcompass_">Instagram</a>
+    <a href="https://www.pinterest.com/quietcompasstore">Pinterest</a>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>&copy; Quiet Compass — <a href="https://quietcompass.gumroad.com">quietcompass.gumroad.com</a></p>
+    <p style="margin-top: 6px;">This worksheet is for educational purposes only and is not a substitute for professional mental health care.</p>
+  </div>
+
+  <script>
+    // Handle form submission
+    const form = document.getElementById('emailForm');
+    const formBox = document.getElementById('formBox');
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = form.querySelector('input[type="email"]').value;
+      const btn = form.querySelector('button');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+
+      try {
+        // Submit to ConvertKit
+        const formData = new FormData(form);
+        await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          mode: 'no-cors'
+        });
+
+        // Show success
+        formBox.style.display = 'none';
+        successMessage.style.display = 'block';
+      } catch (err) {
+        // Fallback — redirect to Gumroad directly
+        window.location.href = 'https://quietcompass.gumroad.com/l/vfcyofi';
+      }
+    });
+  </script>
+
+</body>
+</html>
