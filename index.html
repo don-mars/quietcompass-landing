@@ -420,7 +420,16 @@
       btn.textContent = 'Sending...';
       btn.disabled = true;
 
-      // Submit email to ConvertKit in the background
+      // Save email to Google Sheet (our own list — 100% capture)
+      try {
+        fetch('https://script.google.com/macros/s/AKfycbx8Ly_YPmU9DM5Y0bSjJOBc26wx1V24Ta-bic8Mi4MUBR3CPyK7Xlqw95QA0PuYi5kpIQ/exec', {
+          method: 'POST',
+          body: JSON.stringify({ email: form.querySelector('input[type="email"]').value, source: 'landing-page' }),
+          mode: 'no-cors'
+        });
+      } catch (err) {}
+
+      // Also submit to ConvertKit (for email marketing)
       try {
         const formData = new FormData(form);
         fetch(form.action, {
@@ -428,9 +437,7 @@
           body: formData,
           mode: 'no-cors'
         });
-      } catch (err) {
-        // Email capture failed silently — they still get the download
-      }
+      } catch (err) {}
 
       // Redirect immediately to Gumroad download — no waiting
       window.location.href = 'https://quietcompass.gumroad.com/l/vfcyofi';
