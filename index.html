@@ -420,22 +420,20 @@
       btn.textContent = 'Sending...';
       btn.disabled = true;
 
+      // Submit email to ConvertKit in the background
       try {
-        // Submit to ConvertKit
         const formData = new FormData(form);
-        await fetch(form.action, {
+        fetch(form.action, {
           method: 'POST',
           body: formData,
           mode: 'no-cors'
         });
-
-        // Show success
-        formBox.style.display = 'none';
-        successMessage.style.display = 'block';
       } catch (err) {
-        // Fallback — redirect to Gumroad directly
-        window.location.href = 'https://quietcompass.gumroad.com/l/vfcyofi';
+        // Email capture failed silently — they still get the download
       }
+
+      // Redirect immediately to Gumroad download — no waiting
+      window.location.href = 'https://quietcompass.gumroad.com/l/vfcyofi';
     });
   </script>
 
